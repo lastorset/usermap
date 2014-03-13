@@ -1,8 +1,8 @@
 === User Map ===
 Contributors: dswpsupport
 Tags: google maps, google map, google map location, google map short code,  google map locations, google map pointer, marker,  adderss bubble on map, easy map, google, map, map markers, maps, lat, lon, latitude, longitude, geocoder, geocoding, georss, geo, registered users on google map, live users on google maps, live users google map,live user on google maps live users google maps, live users on google map, live users on google maps, live user on google map, live user on google maps, online users on google maps, online users on google map, online user on google maps, online users on google map, location online users on google map, location online user on google map, location online users on google maps   
-Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=info@teaminindia.com&item_name=Team%20Dotsquares&currency_code=USD&amount=1.00 
-Stable tag: 1.1
+Donate link:
+Stable tag: 1.0
 Requires at least: 3.4
 Tested up to: 3.8.1
 License: GNU General Public License version 3.0
