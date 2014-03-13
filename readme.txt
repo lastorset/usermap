@@ -39,8 +39,6 @@ This section describes how to install the plugin and get it working.
 
 
 == Changelog ==
-
-= 1.0 =
 This version provides basic functionality of google map of registered users and online users.
 
 
