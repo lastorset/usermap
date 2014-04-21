@@ -23,7 +23,7 @@ It also shows active live users on google map, this adds a realtime access to st
 * Super easy to use, no coding required!
 * Display all the users of your blog/website on google maps
 * Shows all the registered users on google map
-* shows active live or logged-in users on google map
+* Shows active live or logged-in users on google map
 * Create unlimited maps and display on posts/pages using shortcode
 * Intuitive and user friendly interface, which makes it very easy to configure User Google map. 
 * No complex configuration options

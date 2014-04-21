@@ -31,7 +31,7 @@ jQuery( document ).ready(function() {
 					//anchor: new google.maps.Point(0, 32)
 			};
             //Change this depending on the name of your PHP file
-          downloadUrl("wp-admin/admin-ajax.php?action=mapregisteruser", function(data) {
+          downloadUrl("<?php echo site_url();?>/wp-admin/admin-ajax.php?action=mapregisteruser", function(data) {
 			 
                var xml = data.responseXML;
                var markers = xml.documentElement.getElementsByTagName("marker");
@@ -55,7 +55,7 @@ jQuery( document ).ready(function() {
               }
           });
           
-             downloadUrl("wp-admin/admin-ajax.php?action=maponlineuser", function(data) {
+             downloadUrl("<?php echo site_url();?>/wp-admin/admin-ajax.php?action=maponlineuser", function(data) {
                 var xml = data.responseXML;
                 var markers = xml.documentElement.getElementsByTagName("marker");
                 for (var i = 0; i < markers.length; i++) {
