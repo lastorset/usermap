@@ -145,41 +145,71 @@ jQuery( document ).ready(function() {
 
         //]]>
  </script>
- <style>
-   .gm-style img {
-         max-width: 1100px !important;
-     }
- </style>
+ <style type="text/css">
+button:hover, button:focus, .button:hover, .button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+	background: #CB4E4E;
+	color: #fff;
+}
+.gm-style img {
+	max-width: 1100px !important;
+}
+.entry-content {
+	width: 60%
+}
+.usermapButton {
+	float: left;
+	width: 100%;
+}
+button, .button, .usermapButton input[type="button"], .usermapButton input[type="reset"], .usermapButton input[type="submit"] {
+	background: #CB4E4E;
+	border-radius: 0;
+	box-shadow: 0 6px #AB3C3C;
+	clear: both;
+	color: #FFFFFF;
+	font-size: 15px;
+	margin-bottom: 20px;
+	padding: 16px 40px;
+	position: relative;
+	text-transform: uppercase;
+	transition: none 0s ease 0s;
+	width: 322px;
+}
+button:hover, .button:hover, .usermapButton input[type="button"]:hover, .usermapButton input[type="reset"]:hover, .usermapButton input[type="submit"]:hover {
+	box-shadow: 0 8px #AB3C3C;
+	top: -2px;
+	background: none repeat scroll 0 0 #CB4E4E;
+}
+#registeruser {
+	width: 600px !important;
+}
+#onlineuser{width:600px;}
+ @media(max-width:750px) {
+#registeruser {
+	width: 100% !important
+}
+#onlineuser{width:100%;}
+}
+</style>
  
- <div style="float:left; width:100%;">
-    <a id="guest" href="javascript:void(0)" onclick="showmap('registeruser','onlineuser',this.id)">
-    <img style="float:left;  margin-right:15px;" src="<?php echo plugins_url( "images/userRegister-icon35x35.png", __FILE__ ); ?>" /><h4 style="clear:none;">Usermap for register user </h4>    </a>
- </div>
- <div>
-     <a id="member" href="javascript:void(0)" onclick="showmap('onlineuser','registeruser',this.id)">
-     <img  style="float:left; margin-right:15px;" src="<?php echo plugins_url( "images/icon_liveevent.png", __FILE__ ); ?>" /><h4 style="clear:none;"> Usermap for Online user</h4>     </a>
- </div>
- 
- <br /><br />
-
- <div id="registeruser">
-     <h2> Usermap </h2>
-    <div style="text-align:justify;width:100%;float:left;margin-bottom:30px">
-    Usermap extension can be used to display your registered users on google map based on address values from registration form or the IP address. You can add this component to your website to display your registered users on google map, this way your visitors can have an idea of the density of users of your website from a particular region. 
-    Plugin will be used to add IP address of the registered user in case you have not activated the address fields on your registration form.
-    </div>
-    <div style="clear:both"></div>
-    <div id="map" style="width: 600px; height: 400px"></div>
- </div>   
- 
- <div id="onlineuser">
-     <h2> Online Usermap </h2> 
-        <div style="text-align:justify;width:100%;float:left;margin-bottom:30px">
-        Usermap extension can be used to display online registered users on google map based on address values from registration form or the IP address. You can add this component to your website to display your registered users on google map, this way your visitors can have an idea of the density of users of your website from a particular region. 
-        Plugin will be used to add IP address of the registered user in case you have not activated the address fields on your registration form.
-        </div> 
-        <div style="clear:both"></div>	
-        <div id="maponline" style="width: 600px; height: 400px"></div>    
- </div>  
- 
-    <script> jQuery('#onlineuser').fadeOut(); </script>
+ <div class="usermapButton"> <a id="guest" href="javascript:void(0)" onclick="showmap('registeruser','onlineuser',this.id)">
+  <button class="btn btn-2 btn-2a">Usermap for register user </button>
+  </a> <a id="member" href="javascript:void(0)" onclick="showmap('onlineuser','registeruser',this.id)">
+  <button class="btn btn-2 btn-2a">Usermap for Online user</button>
+  </a> </div>
+<br />
+<br />
+<div id="registeruser">
+  <h2> Usermap </h2>
+  <div style="text-align:justify;width:100%;float:left;margin-bottom:30px"> Usermap extension can be used to display your registered users on google map based on address values from registration form or the IP address. You can add this component to your website to display your registered users on google map, this way your visitors can have an idea of the density of users of your website from a particular region. 
+    Plugin will be used to add IP address of the registered user in case you have not activated the address fields on your registration form. </div>
+  <div style="clear:both"></div>
+  <div id="map" style="width: 100%; height: 400px"></div>
+</div>
+<div id="onlineuser">
+  <h2> Online Usermap </h2>
+  <div style="text-align:justify;width:100%;float:left;margin-bottom:30px"> Usermap extension can be used to display online registered users on google map based on address values from registration form or the IP address. You can add this component to your website to display your registered users on google map, this way your visitors can have an idea of the density of users of your website from a particular region. 
+    Plugin will be used to add IP address of the registered user in case you have not activated the address fields on your registration form. </div>
+  <div style="clear:both"></div>
+  <div id="maponline" style="width: 100%; height: 400px"></div>
+</div>
+<script> jQuery('#onlineuser').fadeOut(); </script> 
