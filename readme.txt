@@ -40,7 +40,7 @@ This section describes how to install the plugin and get it working.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to `WP-Admin -> Pages -> Add New`
 4. Type any title you like in the post's title area.
-5. Use shortcode `[showmap]`. Type `[showmap]` in the post's content area
+5. Use shortcode `[showmap]`. Type `[showmap]` in the page or post's content area
 6. Click 'Publish'
 
 
