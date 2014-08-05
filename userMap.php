@@ -11,17 +11,58 @@ It also shows active live users on google map, this adds a realtime access to st
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+function fifteen_min_interval($interval) {
+
+    $interval['minutes_15'] = array('interval' => 10, 'display' => 'Once 15 minutes');
+
+    return $interval;
+}
+
+add_filter('cron_schedules', 'fifteen_min_interval');
+
 function installScript() {
     include('installScript.php');
+	wp_schedule_event(time(), 'minutes_15', 'fifteen_min_event');
 }
 
 register_activation_hook( __FILE__, 'installScript' );
+
+add_action( 'fifteen_min_event', 'cron_fifteen_min' );
+/**
+ * On the scheduled action hook, run the function.
+ */
+function cron_fifteen_min() { 
+   
+	    global $wpdb;
+	    $tbl_useronline = $wpdb->prefix . "useronline";
+	
+		$qry = "DELETE FROM $tbl_useronline  where (CURRENT_TIMESTAMP - last_time_login) > 1800";
+		
+		$ress = $wpdb->query($qry);
+		
+}
 
 add_action( 'init', 'userMap' );
 
 function userMap() {
 	    $user =  wp_get_current_user(); 
 		$user_id = $user->data->ID;
+		
+		global $wpdb;
+		$tbl_useronline = $wpdb->prefix . "useronline";
+        $tbl_users = $wpdb->prefix . "users";
+		if($user_id > 0)
+		{
+			$query = "SELECT wpuo.user_id FROM $tbl_useronline AS wpuo INNER JOIN $tbl_users AS wpu ON wpu.ID = wpuo.user_id where wpu.ID = $user_id";
+		$res = $wpdb->get_results($query);
+		//echo "dfsdf<pre>"; print_r($res); die;
+			if($res[0]->user_id > 0)
+			{
+			 $sql = "UPDATE $tbl_useronline SET `last_time_login` = NOW() WHERE $tbl_useronline.`user_id` = $user_id";
+			 $wpdb->query($sql);
+			}
+			
+		}
 		
 	    add_action( 'show_user_profile', 'address_custom_user_profile_fields' );
 		add_action( 'edit_user_profile', 'address_custom_user_profile_fields' );
@@ -559,3 +600,12 @@ function myplugin_registration_save( $user_id ) {
 		}
 
 }
+
+register_deactivation_hook( __FILE__, 'prefix_deactivation' );
+/**
+ * On deactivation, remove all functions from the scheduled action hook.
+ */
+function prefix_deactivation() {
+	wp_clear_scheduled_hook( 'fifteen_min_event');
+}
+
