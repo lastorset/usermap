@@ -18,6 +18,7 @@ $sqluseronline = "CREATE TABLE $table_useronline (
   `user_type` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
   `user_name` varchar(200) NOT NULL,
+  `last_time_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ";
