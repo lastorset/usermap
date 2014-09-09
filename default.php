@@ -139,6 +139,8 @@ jQuery( document ).ready(function() {
             jQuery("#"+showdiv).attr('display','block');
             jQuery("#"+hidediv).fadeOut();
             jQuery("#"+hidediv).attr('display','none');
+			
+			load();
             
         }
       
