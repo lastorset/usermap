@@ -4,7 +4,7 @@ Tags: google maps, google map, google map location, google map short code,  goog
 Donate link:
 Stable tag: 1.0
 Requires at least: 3.4
-Tested up to: 3.8.1
+Tested up to: 4.0
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,10 @@ This section describes how to install the plugin and get it working.
 
 
 == Changelog ==
-This version provides basic functionality of google map of registered users and online users.
+
+= 1.2.2 =
+
+* Fix: Fixed the bug related to the map when user click on the (USERMAP FOR ONLINE USER) tab. Now the User Map showing the full map clicking on the tab.
+
 
 

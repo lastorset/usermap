@@ -4,7 +4,7 @@
 	Plugin URI: http://www.dotsquares.com/
 	Description: User Map plugin is a great addon to your wordpress site, it will display all the users of your 											blog/website on google maps, you will be able to see all the registered users on google map, which will help you and other people see from where most of the users are registering to your site.
 It also shows active live users on google map, this adds a realtime access to stats of all logged in users. 
-	Version: 1.2.1
+	Version: 1.2.2
 	Author: Dotsquares
     Text Domain: user-location
 	License: GPLv2 or later
