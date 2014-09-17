@@ -161,14 +161,19 @@ function mapregisteruser_callback(){
 					{
 						$address['city'] = $value->meta_value; 
 					}
+					else { $address['city'] = ''; }
+					
 					if($value->meta_key == 'state')
 					{
 						$address['state'] = $value->meta_value; 
 					}
+					else { $address['state'] = ''; }
+					
 					if($value->meta_key == 'country')
 					{
 						$address['country'] = $value->meta_value; 
 					}
+					else { $address['country'] = ''; }
 					
 				}
 			}
