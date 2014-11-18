@@ -536,7 +536,7 @@ function geoCheckIP($ip)
 	
 	$useraddressinfo = implode('+', $ipInfo);
 	
-	if( $ipInfo['state'] != "0")
+	if( $ipInfo['country'] != "0")
 	{
 		$ipdata = @$useraddressinfo; //["country"];        
 		return $ipdata;
